@@ -34,7 +34,7 @@ public class RegistryActivity extends AppCompatActivity implements Response.List
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StringRequest sr = new StringRequest(Request.Method.POST, "http://192.168.1.97/ejemplo/registro.php", new Response.Listener<String>() {
+                StringRequest sr = new StringRequest(Request.Method.POST, "http://192.168.1.59/ejemplo/registro.php", new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {

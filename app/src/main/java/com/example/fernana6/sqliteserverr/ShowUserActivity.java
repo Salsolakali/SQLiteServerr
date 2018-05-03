@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class ShowUserActivity extends AppCompatActivity implements Response.Listener<String>, Response.ErrorListener {
 
-    EditText passwordInput;
+    EditText idInput;
     TextView email, name, password;
     Button show;
 
@@ -36,13 +36,13 @@ public class ShowUserActivity extends AppCompatActivity implements Response.List
         name = findViewById(R.id.nameShow);
         password = findViewById(R.id.passwordShow);
 
-        passwordInput = findViewById(R.id.passwordInsertShow);
+        idInput = findViewById(R.id.IdInsertShow);
 
         show = findViewById(R.id.showBTN);
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StringRequest sr = new StringRequest(Request.Method.POST, "http://localhost/ejemplo/select.php", new Response.Listener<String>() {
+                StringRequest sr = new StringRequest(Request.Method.POST, "http://192.168.1.59/ejemplo/select.php", new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -70,7 +70,7 @@ public class ShowUserActivity extends AppCompatActivity implements Response.List
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
-                        params.put("id", passwordInput.getText().toString());
+                        params.put("id", idInput.getText().toString());
                         return params;
                     }
                 };
